@@ -14,6 +14,19 @@
   .favorite {
     position: absolute;
     cursor: pointer;
+    height: 32px;
+    width: 32px;
+    transition: opacity 0.15s ease-in-out;
+
+    &:hover {
+      outline: 3px solid #f6b0b0ad;
+      border-radius: 10px;
+    }
+
+    &:active {
+      opacity: 0.5;
+      background-color: #c0f2e6;
+    }
   }
 
   span {
@@ -26,37 +39,21 @@
     font-size: 13px;
   }
 
-
-
-
-  .button {
-    background: #ffffff;
-    border: 1px solid #f2f2f2;
-    box-sizing: border-box;
-    border-radius: 8px;
+  .plus {
     height: 32px;
     width: 32px;
     cursor: pointer;
+    transition: opacity 0.15s ease-in-out;
 
-    &:hover,
-    &:focus {
-      background: #f2f2f2;
-
-      .iconPlus {
-        fill: #5a5957;
-      }
+    &:hover {
+      outline: 3px solid #b0f6c8ad;
+      border-radius: 10px;
     }
 
     &:active {
-      background: #e0f4f3ad;
-
-      .iconPlus {
-        fill: #c5c3c3;
-      }
+      opacity: 0.5;
+      background-color: #c0f2e6;
     }
   }
 
-  .iconPlus {
-    fill: #9B9B9B;
-  }
 }

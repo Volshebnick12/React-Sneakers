@@ -31,12 +31,32 @@ header {
   }
 }
 
-.icon {
-  fill: #9B9B9B;
+.cart-icon {
   cursor: pointer;
+  color: #0f341a;
+  font-weight: 500;
 
-  &:hover,
-  &:focus {
+  &.cart-icon:hover {
+    color: #5a5957;
+
+    .icon {
+      fill: #5a5957;
+    }
+  }
+
+  &.cart-icon:active {
+    color: #c5c3c3;
+
+    .icon {
+      fill: #c5c3c3;
+    }
+  }
+}
+
+.icon {
+  fill: #0f341a;
+
+  &:hover {
     fill: #5a5957;
   }
 
@@ -115,7 +135,7 @@ h5 {
 }
 
 .drawer {
-  position: absolute;
+  position: fixed;
   width: 420px;
   height: 100%;
   right: 0;
@@ -124,11 +144,6 @@ h5 {
   padding: 30px;
   display: flex;
   flex-direction: column;
-
-  .items {
-    overflow: auto;
-    margin-bottom: 40px;
-  }
 
 
   h2 {
@@ -237,7 +252,8 @@ h5 {
   }
 
   &:active {
-    background: #e0f4f3ad;
+    opacity: 0.5;
+    
   }
 
 }
