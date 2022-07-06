@@ -88,6 +88,26 @@ h5 {
   border-radius: 10px;
   padding: 0 15px;
   cursor: pointer;
+  position: relative;
+
+  .clear {
+    position: absolute;
+    top: 15px;
+    right: 13px;
+    width: 13px;
+    height: 13px;
+    opacity: 0.5;
+    cursor: pointer;
+    transition: opacity 0.15s ease-in-out;
+
+    &:hover {
+      opacity: 1;
+    }
+
+    &:active {
+      opacity: 0.5;
+    }
+  }
 
   input {
     border: 0;
@@ -218,6 +238,34 @@ h5 {
   flex: 1;
 }
 
+.cartEmpty {
+  text-align: center;
+
+  p {
+    width: 280px;
+    line-height: 24px;
+  }
+
+  .greenButton {
+    width: 245px;
+    margin-top: 20px;
+
+    &:hover {
+      img {
+        transform: rotate(180deg) translateX(3px);
+      }
+    }
+
+    img {
+      position: relative;
+      top: 1px;
+      transform: rotate(180deg);
+      margin-right: 15px;
+      transition: transform 0.15s ease-in-out;
+    }
+  }
+}
+
 .cartItem {
   border: 1px solid #f3f3f3;
   border-radius: 20px;
@@ -253,7 +301,7 @@ h5 {
 
   &:active {
     opacity: 0.5;
-    
+
   }
 
 }
