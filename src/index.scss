@@ -197,6 +197,12 @@ h5 {
   .greenButton {
     position: relative;
 
+    &:disabled {
+      background-color: #bebebe !important;
+      cursor: default;
+      animation: button-loading 0.6s ease-in-out infinite;
+    }
+
     &:hover {
       img {
         transform: translateX(5px);
@@ -223,6 +229,7 @@ h5 {
   font-weight: 500;
   cursor: pointer;
   transition: 0.1s ease-in-out;
+
 
   &:hover {
     background: lighten(#9dd558, 5%);
@@ -293,7 +300,7 @@ h5 {
 .remove-btn {
   opacity: 0.5;
   cursor: pointer;
-  transition: opacity 0.15s ease-in-out;
+  transition: opacity 0.6s ease-in-out;
 
   &:hover {
     opacity: 1;
@@ -304,4 +311,18 @@ h5 {
 
   }
 
+}
+
+@keyframes button-loading {
+  0% {
+    opacity: 1;
+  }
+
+  50% {
+    opacity: 0.7;
+  }
+
+  100% {
+    opacity: 1;
+  }
 }
