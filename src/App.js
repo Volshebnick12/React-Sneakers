@@ -6,6 +6,7 @@ import Drawer from './components/Drawer';
 import FavoritesList from './pages/FavoritesList';
 import Home from './pages/Home';
 import AppContext from './context';
+import Orders from './pages/Orders';
 
 function App() {
   const [items, setItems] = React.useState([]);
@@ -94,6 +95,7 @@ function App() {
             isLoading={isLoading}
           />} />
           <Route exact path='/favoriteslist' element={<FavoritesList />} />
+          <Route exact path='/orders' element={<Orders />} />
         </Routes>
       </div>
     </AppContext.Provider>

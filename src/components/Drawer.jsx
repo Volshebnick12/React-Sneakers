@@ -1,15 +1,16 @@
 import React from 'react';
 import Info from '../components/Card/Info';
-import AppContext from '../context';
 import axios from 'axios';
+import { useCart } from '../hooks/useCart';
 
 const delay = (ms) => new Promise((resolve) => setTimeout(resolve, ms));
 
 function Drawer({ onClose, onRemove, items = [] }) {
-    const { cartItems, setCartItems } = React.useContext(AppContext);
+    const { cartItems, setCartItems, totalPrice } = useCart();
     const [orderID, setOrderId] = React.useState(null);
     const [isOrderComplete, setIsOrderComplete] = React.useState(false);
     const [isLoading, setIsLoading] = React.useState(false);
+    const tax = (totalPrice / 20).toFixed(2);
 
     const onClickOrder = async () => {
         try {
@@ -26,7 +27,7 @@ function Drawer({ onClose, onRemove, items = [] }) {
             }
 
         } catch (error) {
-            alert('Ошибка при создании заказа :(')
+            console.error('Ошибка при создании заказа :(', error);
         }
         setIsLoading(false);
     };
@@ -55,12 +56,12 @@ function Drawer({ onClose, onRemove, items = [] }) {
                                 <li>
                                     <span>Итого:</span>
                                     <div></div>
-                                    <b>21 498 руб.</b>
+                                    <b>{totalPrice} руб.</b>
                                 </li>
                                 <li>
                                     <span>Налог 5%:</span>
                                     <div></div>
-                                    <b>1074 руб.</b>
+                                    <b>{tax} руб.</b>
                                 </li>
                             </ul>
                             <button disabled={isLoading} onClick={onClickOrder} className="greenButton">Оформить заказ<img src="/img/arrow.svg" alt="Стрелочка кнопки" /></button>

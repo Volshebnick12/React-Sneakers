@@ -53,7 +53,7 @@ function Card({
                         <div className="d-flex justify-between ">
                             <div className="d-flex flex-column">
                                 <span>Цена:</span>
-                                <b>{price} руб.</b>
+                                <b>{Number(price).toLocaleString('ru-RU')} руб.</b>
                             </div>
                             <img
                                 className={styles.plus}
