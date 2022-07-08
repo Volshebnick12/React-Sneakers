@@ -1,4 +1,4 @@
-# магазин кросовок (маленький проект на React)
+# Магазин кросовок (проект на React)
 
 ### Проект можно посмотреть здесь: [https://shop-react-sneakers.netlify.app] (https://shop-react-sneakers.netlify.app)
 
