@@ -1,3 +1,7 @@
+# магазин кросовок (маленький проект на React)
+
+### Проект можно посмотреть здесь: [https://shop-react-sneakers.netlify.app] (https://shop-react-sneakers.netlify.app)
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
