@@ -1,11 +1,14 @@
 import React from 'react';
-import Info from '../components/Card/Info';
 import axios from 'axios';
-import { useCart } from '../hooks/useCart';
+
+import Info from '../Card/Info';
+import { useCart } from '../../hooks/useCart';
+
+import styles from './Drawer.module.scss'
 
 const delay = (ms) => new Promise((resolve) => setTimeout(resolve, ms));
 
-function Drawer({ onClose, onRemove, items = [] }) {
+function Drawer({ onClose, onRemove, items = [], opened }) {
     const { cartItems, setCartItems, totalPrice } = useCart();
     const [orderID, setOrderId] = React.useState(null);
     const [isOrderComplete, setIsOrderComplete] = React.useState(false);
@@ -33,13 +36,13 @@ function Drawer({ onClose, onRemove, items = [] }) {
     };
 
     return (
-        <div className="overlay">
-            <div className="drawer">
+        <div className={`${styles.overlay} ${opened ? styles.overlayVisible : ''}`}>
+            <div className={styles.drawer}>
                 <h2 className="mb-30 d-flex justify-between">Корзина <img onClick={onClose} className="remove-btn cu-p" src="/img/btn-remove.svg" alt="remove" /></h2>
 
                 {items.length > 0 ?
                     <div className="d-flex flex-column flex">
-                        <div className="items">
+                        <div className="items flex">
                             {items.map((obj) => (
                                 <div key={obj.id} className="cartItem d-flex align-center mb-20">
                                     <div className="cartItemImg" style={{ backgroundImage: `url(${obj.imageURL})` }}></div>
